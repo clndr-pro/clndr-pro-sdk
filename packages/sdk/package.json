@@ -1,0 +1,36 @@
+{
+  "name": "@clndr/sdk",
+  "version": "0.1.0",
+  "description": "TypeScript SDK for clndr.pro — booking pages, slots, and meetings.",
+  "license": "MIT",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": ["dist", "README.md"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/clndr-pro/clndr-sdk.git",
+    "directory": "packages/sdk"
+  },
+  "bugs": "https://github.com/clndr-pro/clndr-sdk/issues",
+  "homepage": "https://github.com/clndr-pro/clndr-sdk#readme",
+  "keywords": ["clndr", "scheduling", "calendar", "booking", "sdk"],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

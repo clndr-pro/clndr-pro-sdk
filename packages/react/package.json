@@ -1,0 +1,48 @@
+{
+  "name": "@clndr/react",
+  "version": "0.1.0",
+  "description": "React components for embedding clndr.pro booking flows.",
+  "license": "MIT",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": ["dist", "README.md"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/clndr-pro/clndr-sdk.git",
+    "directory": "packages/react"
+  },
+  "bugs": "https://github.com/clndr-pro/clndr-sdk/issues",
+  "homepage": "https://github.com/clndr-pro/clndr-sdk#readme",
+  "keywords": ["clndr", "scheduling", "calendar", "booking", "react", "shadcn"],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean --external react --external react-dom",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "dependencies": {
+    "@clndr/sdk": "0.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
