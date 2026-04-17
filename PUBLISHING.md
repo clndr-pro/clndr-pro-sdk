@@ -74,8 +74,8 @@ npm publish --workspace @clndr-pro/react --access public
 
 Verify:
 
-- <https://www.npmjs.com/package/@clndr/sdk>
-- <https://www.npmjs.com/package/@clndr/react>
+- <https://www.npmjs.com/package/@clndr-pro/sdk>
+- <https://www.npmjs.com/package/@clndr-pro/react>
 
 ### 2.3 Automated publish (subsequent releases)
 
