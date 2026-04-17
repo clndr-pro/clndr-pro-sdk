@@ -25,7 +25,7 @@ From inside `apps/clndr-sdk/`:
 ```bash
 git init
 git add .
-git commit -m "Initial commit — @clndr-pro/sdk and @clndr-pro/react v0.1.0"
+git commit -m "Initial commit — @clndr-pro/sdk and @clndr-pro/react v0.1.3"
 git branch -M main
 git remote add origin git@github.com:clndr-pro/clndr-sdk.git
 git push -u origin main
@@ -55,7 +55,7 @@ security updates.
 what appears on [npmjs.com](https://www.npmjs.com/package/@clndr-pro/sdk?activeTab=versions).
 A new version shows up only after a successful **`npm publish`** (manual) or
 after the **Publish** GitHub Action runs (see §2.3). That action only runs
-when you **push a git tag** matching `v*` (e.g. `v0.1.1`), and only if
+when you **push a git tag** matching `v*` (e.g. `v0.1.3`), and only if
 `NPM_TOKEN` is configured on the repo. Until then, the registry stays on the
 last published version even if `package.json` in the repo is already bumped.
 
@@ -90,8 +90,8 @@ Verify:
 The `.github/workflows/publish.yml` workflow publishes both packages when a tag matching `v*` is pushed. It publishes the **version strings in
 `packages/sdk/package.json` and `packages/react/package.json`** — bump those
 **before** tagging so npm gets the version you intend (the tag name and
-`package.json` `version` should match, e.g. tag `v0.1.1` with `"version":
-"0.1.1"` in both packages).
+`package.json` `version` should match, e.g. tag `v0.1.3` with `"version":
+"0.1.3"` in both packages).
 
 
 Set up once:
@@ -119,7 +119,7 @@ verified badge linking back to the GitHub Actions run.
 ### 2.4 Deprecating a bad release
 
 ```bash
-npm deprecate @clndr-pro/sdk@0.1.1 "Use 0.1.2 or later"
+npm deprecate @clndr-pro/sdk@0.1.2 "Use 0.1.3 or later"
 ```
 
 Never `unpublish` 24h+ after release — it breaks everyone who installed it.
@@ -218,7 +218,7 @@ and in React:
 - [ ] npm pages show READMEs and the GitHub repo link.
 - [ ] `npm i @clndr-pro/react` in a fresh Next.js app resolves both packages.
 - [ ] GitHub Actions CI is green on `main`.
-- [ ] Publish workflow ran successfully on the first `v0.1.0` tag.
+- [ ] Publish workflow ran successfully on the first `v0.1.3` tag.
 - [ ] A booking created via the deployed API appears in the production
       Supabase `meetings` table.
 - [ ] Google Meet end-to-end works against the deployed app.

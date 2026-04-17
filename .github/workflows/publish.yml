@@ -1,7 +1,7 @@
 name: Publish
 
 # Publishes both packages to npm when a tag matching `v*` is pushed (e.g.
-# `v0.1.0`). Requires `NPM_TOKEN` repository secret (Automation-type token
+# `v0.1.3`). Requires `NPM_TOKEN` repository secret (Automation-type token
 # from https://www.npmjs.com/settings/<user>/tokens/new — it must have
 # publish rights on the `@clndr-pro` scope).
 on:

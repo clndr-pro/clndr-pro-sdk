@@ -98,9 +98,9 @@ Then follow the same env + provider setup as § 3a.
 ```bash
 cd apps/clndr-sdk/packages/sdk   && npm pack
 cd apps/clndr-sdk/packages/react && npm pack
-# produces clndr-sdk-0.1.0.tgz and clndr-react-0.1.0.tgz
+# produces clndr-pro-sdk-0.1.3.tgz and clndr-pro-react-0.1.3.tgz
 # install in the target app:
-npm i /path/to/clndr-sdk-0.1.0.tgz /path/to/clndr-react-0.1.0.tgz
+npm i /path/to/clndr-pro-sdk-0.1.3.tgz /path/to/clndr-pro-react-0.1.3.tgz
 ```
 
 ---

@@ -6,7 +6,7 @@ labels: bug
 
 **Package and version**
 
-<!-- e.g. @clndr-pro/react 0.1.2, Next.js 15, React 18 -->
+<!-- e.g. @clndr-pro/react 0.1.3, Next.js 15, React 18 -->
 
 **What happened**
 
