@@ -1,7 +1,7 @@
 'use client';
 
 import React, { createContext, useContext, useMemo } from 'react';
-import { Clndr } from '@clndr/sdk';
+import { Clndr } from '@clndr-pro/sdk';
 
 interface ClndrContextValue {
   client: Clndr;

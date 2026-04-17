@@ -1,4 +1,4 @@
-import { BookingInline } from '@clndr/react';
+import { BookingInline } from '@clndr-pro/react';
 
 /**
  * Client-side booking page that uses the publishable key from ClndrProvider.

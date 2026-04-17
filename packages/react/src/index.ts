@@ -18,5 +18,5 @@ export type {
   TimeSlot,
   UserProfile,
   CreateBookingInput,
-} from '@clndr/sdk';
-export { Clndr, ClndrError } from '@clndr/sdk';
+} from '@clndr-pro/sdk';
+export { Clndr, ClndrError } from '@clndr-pro/sdk';

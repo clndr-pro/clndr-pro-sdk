@@ -16,4 +16,4 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run typecheck --workspaces --if-present
-      - run: npm run build --workspace @clndr/sdk --workspace @clndr/react
+      - run: npm run build --workspace @clndr-pro/sdk --workspace @clndr-pro/react

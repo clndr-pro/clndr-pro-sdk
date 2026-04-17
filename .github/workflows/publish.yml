@@ -3,7 +3,7 @@ name: Publish
 # Publishes both packages to npm when a tag matching `v*` is pushed (e.g.
 # `v0.1.0`). Requires `NPM_TOKEN` repository secret (Automation-type token
 # from https://www.npmjs.com/settings/<user>/tokens/new — it must have
-# publish rights on the `@clndr` scope).
+# publish rights on the `@clndr-pro` scope).
 on:
   push:
     tags: ['v*']
@@ -22,12 +22,12 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
           cache: npm
       - run: npm ci
-      - run: npm run build --workspace @clndr/sdk --workspace @clndr/react
-      - name: Publish @clndr/sdk
-        run: npm publish --workspace @clndr/sdk --access public --provenance
+      - run: npm run build --workspace @clndr-pro/sdk --workspace @clndr-pro/react
+      - name: Publish @clndr-pro/sdk
+        run: npm publish --workspace @clndr-pro/sdk --access public --provenance
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - name: Publish @clndr/react
-        run: npm publish --workspace @clndr/react --access public --provenance
+      - name: Publish @clndr-pro/react
+        run: npm publish --workspace @clndr-pro/react --access public --provenance
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

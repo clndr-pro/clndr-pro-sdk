@@ -2,7 +2,7 @@
 
 Two separate pipelines:
 
-1. **The SDK packages** (`@clndr/sdk`, `@clndr/react`) → GitHub + npm.
+1. **The SDK packages** (`@clndr-pro/sdk`, `@clndr-pro/react`) → GitHub + npm.
 2. **The clndr.pro app itself** → a public URL so the SDK has an API to call.
 
 ---
@@ -25,7 +25,7 @@ From inside `apps/clndr-sdk/`:
 ```bash
 git init
 git add .
-git commit -m "Initial commit — @clndr/sdk and @clndr/react v0.1.0"
+git commit -m "Initial commit — @clndr-pro/sdk and @clndr-pro/react v0.1.0"
 git branch -M main
 git remote add origin git@github.com:clndr-pro/clndr-sdk.git
 git push -u origin main
@@ -49,16 +49,16 @@ security updates.
 
 ---
 
-## 2. Publish to npm (scoped `@clndr/*`)
+## 2. Publish to npm (scoped `@clndr-pro/*`)
 
 ### 2.1 Claim the scope
 
 ```bash
 npm login
-# If @clndr doesn't exist yet, creating the first public scoped package
+# If @clndr-pro doesn't exist yet, creating the first public scoped package
 # auto-creates it under your user scope. If you want it owned by an npm
 # organization, first:
-#   https://www.npmjs.com/org/create → create "clndr" organization
+#   https://www.npmjs.com/org/create → create "clndr-pro" organization
 # then add yourself / collaborators.
 ```
 
@@ -85,7 +85,7 @@ tag matching `v*` is pushed.
 Set up once:
 
 1. On <https://www.npmjs.com/settings/~/tokens> create an **Automation**
-   token with publish access to the `@clndr` scope.
+   token with publish access to the `@clndr-pro` scope.
 2. On the GitHub repo: **Settings → Secrets and variables → Actions → New
    repository secret** → `NPM_TOKEN = <the token>`.
 3. Enable **Settings → Actions → General → Workflow permissions → Read and
@@ -107,7 +107,7 @@ verified badge linking back to the GitHub Actions run.
 ### 2.4 Deprecating a bad release
 
 ```bash
-npm deprecate @clndr/sdk@0.1.1 "Use 0.1.2 or later"
+npm deprecate @clndr-pro/sdk@0.1.1 "Use 0.1.2 or later"
 ```
 
 Never `unpublish` 24h+ after release — it breaks everyone who installed it.
@@ -204,7 +204,7 @@ and in React:
 ## 5. Post-launch checklist
 
 - [ ] npm pages show READMEs and the GitHub repo link.
-- [ ] `npm i @clndr/react` in a fresh Next.js app resolves both packages.
+- [ ] `npm i @clndr-pro/react` in a fresh Next.js app resolves both packages.
 - [ ] GitHub Actions CI is green on `main`.
 - [ ] Publish workflow ran successfully on the first `v0.1.0` tag.
 - [ ] A booking created via the deployed API appears in the production

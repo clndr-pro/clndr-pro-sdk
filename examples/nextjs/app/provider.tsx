@@ -1,6 +1,6 @@
 'use client';
 
-import { ClndrProvider } from '@clndr/react';
+import { ClndrProvider } from '@clndr-pro/react';
 
 export function ClndrProviderWrapper({ children }: { children: React.ReactNode }) {
   return (

@@ -6,8 +6,8 @@ This monorepo contains two packages:
 
 | Package        | Description                                                              |
 | -------------- | ------------------------------------------------------------------------ |
-| `@clndr/sdk`   | Server-first TypeScript client. Node, Edge, Bun, Deno.                   |
-| `@clndr/react` | Drop-in React components + hooks with full styling / primitive overrides |
+| `@clndr-pro/sdk`   | Server-first TypeScript client. Node, Edge, Bun, Deno.                   |
+| `@clndr-pro/react` | Drop-in React components + hooks with full styling / primitive overrides |
 
 ## Quick start
 
@@ -19,10 +19,10 @@ In your clndr.pro dashboard (`/api-keys`), create:
 - A **publishable key** (`clndr_pk_...`) for the browser — scoped to read
   booking pages, read slots, and create guest bookings.
 
-### 2. Server-side usage (`@clndr/sdk`)
+### 2. Server-side usage (`@clndr-pro/sdk`)
 
 ```ts
-import { Clndr } from '@clndr/sdk';
+import { Clndr } from '@clndr-pro/sdk';
 
 const clndr = new Clndr(process.env.CLNDR_SECRET_KEY!);
 
@@ -42,12 +42,12 @@ await clndr.bookings.update(booking.id, { status: 'confirmed' });
 await clndr.bookings.cancel(booking.id);
 ```
 
-### 3. React components (`@clndr/react`)
+### 3. React components (`@clndr-pro/react`)
 
 ```tsx
 // app/layout.tsx
 'use client';
-import { ClndrProvider } from '@clndr/react';
+import { ClndrProvider } from '@clndr-pro/react';
 
 export default function Layout({ children }) {
   return (
@@ -60,7 +60,7 @@ export default function Layout({ children }) {
 
 ```tsx
 // app/book/page.tsx
-import { BookingInline } from '@clndr/react';
+import { BookingInline } from '@clndr-pro/react';
 export default function Page() {
   return <BookingInline slug="30-min-intro" />;
 }
@@ -74,7 +74,7 @@ replaced via the `components` prop, and every class name overridden via
 or any other design system.
 
 ```tsx
-import { BookingForm } from '@clndr/react';
+import { BookingForm } from '@clndr-pro/react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -97,7 +97,7 @@ import { Label } from '@/components/ui/label';
 Or go even lower-level with hooks:
 
 ```tsx
-import { useBookingPage, useAvailableSlots, useCreateBooking } from '@clndr/react';
+import { useBookingPage, useAvailableSlots, useCreateBooking } from '@clndr-pro/react';
 
 const { data: page } = useBookingPage(slug);
 const { slots } = useAvailableSlots(slug, date);

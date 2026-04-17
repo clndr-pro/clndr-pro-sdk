@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { Clndr } from '@clndr/sdk';
+import { Clndr } from '@clndr-pro/sdk';
 
 /**
  * Server-side route that uses the SECRET key to list bookings. Call this

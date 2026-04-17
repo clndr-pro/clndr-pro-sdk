@@ -4,7 +4,7 @@
 cp .env.example .env.local  # fill in keys
 cd ../..                    # back to the workspace root
 npm install
-npm run build -w @clndr/sdk -w @clndr/react
+npm run build -w @clndr-pro/sdk -w @clndr-pro/react
 cd examples/nextjs
 npm run dev
 ```

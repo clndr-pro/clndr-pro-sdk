@@ -1,8 +1,8 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
-import type { BookingPageDetail, TimeSlot, CreateBookingInput, Booking } from '@clndr/sdk';
-import { ClndrError } from '@clndr/sdk';
+import type { BookingPageDetail, TimeSlot, CreateBookingInput, Booking } from '@clndr-pro/sdk';
+import { ClndrError } from '@clndr-pro/sdk';
 import { useClndr } from './provider';
 
 type Status = 'idle' | 'loading' | 'success' | 'error';
@@ -22,7 +22,7 @@ export function useBookingPage(slug: string | null) {
     setStatus('loading');
     client.bookingPages
       .get(slug)
-      .then((res) => {
+      .then((res: BookingPageDetail) => {
         if (!alive) return;
         setData(res);
         setStatus('success');
@@ -60,7 +60,7 @@ export function useAvailableSlots(slug: string | null, date: Date | null) {
     setStatus('loading');
     client.bookingPages
       .getSlots(slug, date)
-      .then((res) => {
+      .then((res: TimeSlot[]) => {
         if (!alive) return;
         setSlots(res);
         setStatus('success');

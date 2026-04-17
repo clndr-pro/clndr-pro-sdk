@@ -1,12 +1,12 @@
 'use client';
 
 import React, { ComponentType, FormEvent, useMemo, useState } from 'react';
-import type { BookingQuestion, TimeSlot } from '@clndr/sdk';
+import type { BookingQuestion, TimeSlot } from '@clndr-pro/sdk';
 import { useAvailableSlots, useBookingPage, useCreateBooking } from './hooks';
 
 /**
  * Design goals:
- *  - Ship real working UI (not headless-only) so `npm i @clndr/react` gets
+ *  - Ship real working UI (not headless-only) so `npm i @clndr-pro/react` gets
  *    you a booking page immediately.
  *  - Let every piece be swapped. Pass `components={{ Button: MyButton }}` to
  *    use your Shadcn / MUI / Chakra primitives instead of the defaults.
@@ -253,7 +253,7 @@ export function BookingForm({ slug, prefill, classNames, components, onBooked }:
               />
             </div>
 
-            {page.questions.map((q) => (
+            {page.questions.map((q: BookingQuestion) => (
               <QuestionField
                 key={q.id}
                 question={q}

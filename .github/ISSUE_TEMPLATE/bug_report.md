@@ -1,12 +1,12 @@
 ---
 name: Bug report
-about: Report a reproducible problem in @clndr/sdk or @clndr/react
+about: Report a reproducible problem in @clndr-pro/sdk or @clndr-pro/react
 labels: bug
 ---
 
 **Package and version**
 
-<!-- e.g. @clndr/react 0.1.2, Next.js 15, React 18 -->
+<!-- e.g. @clndr-pro/react 0.1.2, Next.js 15, React 18 -->
 
 **What happened**
 

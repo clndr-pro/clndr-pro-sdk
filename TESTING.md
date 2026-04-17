@@ -44,10 +44,10 @@ has something to call. Note the **slug**.
 ```bash
 cd apps/clndr-sdk
 npm install
-npm run build --workspace @clndr/sdk --workspace @clndr/react
+npm run build --workspace @clndr-pro/sdk --workspace @clndr-pro/react
 ```
 
-The workspace setup makes `@clndr/sdk` and `@clndr/react` resolvable by any
+The workspace setup makes `@clndr-pro/sdk` and `@clndr-pro/react` resolvable by any
 app inside `apps/clndr-sdk/`. For a project **outside** this repo, see
 § 3a (link) or § 3b (tarball).
 
@@ -87,7 +87,7 @@ npm link /path/to/apps/clndr-sdk/packages/sdk \
 Add to `next.config.ts`:
 
 ```ts
-const nextConfig = { transpilePackages: ['@clndr/sdk', '@clndr/react'] };
+const nextConfig = { transpilePackages: ['@clndr-pro/sdk', '@clndr-pro/react'] };
 export default nextConfig;
 ```
 
@@ -110,7 +110,7 @@ npm i /path/to/clndr-sdk-0.1.0.tgz /path/to/clndr-react-0.1.0.tgz
 ```tsx
 // app/provider.tsx
 'use client';
-import { ClndrProvider } from '@clndr/react';
+import { ClndrProvider } from '@clndr-pro/react';
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
@@ -140,7 +140,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
 ```tsx
 // app/book/page.tsx
-import { BookingInline } from '@clndr/react';
+import { BookingInline } from '@clndr-pro/react';
 export default function Page() {
   return <BookingInline slug="30-min-intro" />;
 }
@@ -158,7 +158,7 @@ export default function Page() {
 ```tsx
 'use client';
 import { useState } from 'react';
-import { BookingModal } from '@clndr/react';
+import { BookingModal } from '@clndr-pro/react';
 
 export default function Page() {
   const [open, setOpen] = useState(false);
@@ -176,7 +176,7 @@ export default function Page() {
 ### 5.3 Customization — Shadcn primitives
 
 ```tsx
-import { BookingForm } from '@clndr/react';
+import { BookingForm } from '@clndr-pro/react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -200,7 +200,7 @@ import { Card } from '@/components/ui/card';
 
 ```tsx
 'use client';
-import { useBookingPage, useAvailableSlots, useCreateBooking } from '@clndr/react';
+import { useBookingPage, useAvailableSlots, useCreateBooking } from '@clndr-pro/react';
 import { useState } from 'react';
 
 export default function Custom() {
@@ -219,7 +219,7 @@ export default function Custom() {
 ```ts
 // app/api/bookings/route.ts
 import { NextResponse } from 'next/server';
-import { Clndr } from '@clndr/sdk';
+import { Clndr } from '@clndr-pro/sdk';
 
 export async function GET() {
   const clndr = new Clndr({
