@@ -64,9 +64,7 @@ export class Clndr {
     const text = await res.text();
     const json = text ? safeParse(text) : null;
     if (!res.ok) {
-      const message =
-        (json && typeof json === 'object' && json !== null && 'error' in json && String((json as any).error)) ||
-        `HTTP ${res.status}`;
+      const message = apiErrorMessage(json, res.status);
       throw new ClndrError(message, res.status, json);
     }
     return (json as T) ?? (undefined as unknown as T);
@@ -79,6 +77,14 @@ function safeParse(s: string): unknown {
   } catch {
     return s;
   }
+}
+
+function apiErrorMessage(json: unknown, status: number): string {
+  if (!json || typeof json !== 'object' || json === null || !('error' in json)) {
+    return `HTTP ${status}`;
+  }
+  const msg = String((json as Record<string, unknown>).error);
+  return msg || `HTTP ${status}`;
 }
 
 class BookingPagesResource {
