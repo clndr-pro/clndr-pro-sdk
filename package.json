@@ -1,14 +1,14 @@
 {
   "name": "clndr-sdk-workspace",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Official SDK + React components for clndr.pro",
   "workspaces": [
     "packages/*",
     "examples/*"
   ],
   "scripts": {
-    "build": "npm run build -w @clndr/sdk -w @clndr/react",
+    "build": "npm run build -w @clndr-pro/sdk -w @clndr-pro/react",
     "typecheck": "npm run typecheck --workspaces --if-present"
   },
   "license": "MIT"

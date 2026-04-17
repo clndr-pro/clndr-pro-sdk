@@ -67,9 +67,9 @@ npm login
 ```bash
 cd apps/clndr-sdk
 npm ci
-npm run build --workspace @clndr/sdk --workspace @clndr/react
-npm publish --workspace @clndr/sdk  --access public
-npm publish --workspace @clndr/react --access public
+npm run build --workspace @clndr-pro/sdk --workspace @clndr-pro/react
+npm publish --workspace @clndr-pro/sdk  --access public
+npm publish --workspace @clndr-pro/react --access public
 ```
 
 Verify:
