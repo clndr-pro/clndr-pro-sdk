@@ -51,6 +51,14 @@ security updates.
 
 ## 2. Publish to npm (scoped `@clndr-pro/*`)
 
+**npm does not track GitHub.** Pushing commits to `main` does **not** change
+what appears on [npmjs.com](https://www.npmjs.com/package/@clndr-pro/sdk?activeTab=versions).
+A new version shows up only after a successful **`npm publish`** (manual) or
+after the **Publish** GitHub Action runs (see §2.3). That action only runs
+when you **push a git tag** matching `v*` (e.g. `v0.1.1`), and only if
+`NPM_TOKEN` is configured on the repo. Until then, the registry stays on the
+last published version even if `package.json` in the repo is already bumped.
+
 ### 2.1 Claim the scope
 
 ```bash
@@ -79,8 +87,12 @@ Verify:
 
 ### 2.3 Automated publish (subsequent releases)
 
-The `.github/workflows/publish.yml` workflow publishes both packages when a
-tag matching `v*` is pushed.
+The `.github/workflows/publish.yml` workflow publishes both packages when a tag matching `v*` is pushed. It publishes the **version strings in
+`packages/sdk/package.json` and `packages/react/package.json`** — bump those
+**before** tagging so npm gets the version you intend (the tag name and
+`package.json` `version` should match, e.g. tag `v0.1.1` with `"version":
+"0.1.1"` in both packages).
+
 
 Set up once:
 
